@@ -1,0 +1,26 @@
+class ShoppingCart:
+    def __init__(self):
+        self.cart = []
+
+    def add_item(self, item):
+        self.cart.append(item)
+        print(item, "added to cart")
+
+    def remove_item(self, item):
+        if item in self.cart:
+            self.cart.remove(item)
+            print(item, "removed from cart")
+        else:
+            print(item, "not found in cart")
+
+    def view_cart(self):
+        print("Items in cart:")
+        for item in self.cart:
+            print(item)
+c = ShoppingCart()
+c.add_item("Laptop")
+c.add_item("Mouse")
+c.add_item("Keyboard")
+c.view_cart()
+c.remove_item("Mouse")
+c.view_cart()
