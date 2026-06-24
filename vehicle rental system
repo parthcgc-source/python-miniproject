@@ -1,0 +1,45 @@
+class Car(Vehicle):
+    def __init__(self):
+        super().__init__(
+            name="Car",
+            daily_rate=50class Vehicle:
+    def __init__(self, name, daily_rate, free_km_limit, extra_rate_per_km):
+        self.name = name
+        self.daily_rate = daily_rate
+        self.free_km_limit = free_km_limit
+        self.extra_rate_per_km = extra_rate_per_km
+
+    def calculate_rent(self, kilometers):
+        if kilometers <= self.free_km_limit:
+            return self.daily_rate
+        else:
+            extra_kms = kilometers - self.free_km_limit
+            return self.daily_rate + (extra_kms * self.extra_rate_per_km)
+
+class Bike(Vehicle):
+    def __init__(self):
+        super().__init__(
+            name="Bike",
+            daily_rate=2000,
+            free_km_limit=250,
+            extra_rate_per_km=5
+        )00,
+            free_km_limit=250,
+            extra_rate_per_km=12
+        )
+
+class Bus(Vehicle):
+    def __init__(self):
+        super().__init__(
+            name="Bus",
+            daily_rate=7500,
+            free_km_limit=250,
+            extra_rate_per_km=20
+        )
+bike = Bike()
+car = Car()
+bus = Bus()
+
+print(f"Bike rent for 250 km: {bike.calculate_rent(250)}")
+print(f"Car rent for 250 km: {car.calculate_rent(250)}")
+print(f"Bus rent for 250 km: {bus.calculate_rent(250)}")
