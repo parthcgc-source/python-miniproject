@@ -1,0 +1,13 @@
+class Movie:
+    def __init__(self, name, director, rating):
+        self.name = name
+        self.director = director
+        self.rating = rating
+
+    def show_details(self):
+        print("Movie Name:", self.name)
+        print("Director:", self.director)
+        print("Rating:", self.rating)
+
+m1 = Movie("spidermen", "parth", 4.2)
+m1.show_details()
