@@ -1,0 +1,23 @@
+ef print_salary_slip(role, base_salary, hours=0, rate=0):
+    extra_pay = hours * rate
+    gross_salary = base_salary + extra_pay
+
+    print("=" * 35)
+    print("          SALARY SLIP")
+    print("=" * 35)
+    print(f"Role         : {role}")
+    print(f"Base Salary  : {base_salary}")
+    print(f"Hours Worked : {hours}")
+    print(f"Hourly Rate  : {rate}")
+
+    if extra_pay > 0:
+        print(f"Extra Pay    : {extra_pay}")
+
+    print(f"Gross Salary : {gross_salary}")
+    print("=" * 35)
+    print()
+
+print_salary_slip("MANAGER", 80000, 17, 1000)
+print_salary_slip("DEVELOPER", 40000,8,800)
+extra_hours = 20
+print_salary_slip("INTERN", 15000, extra_hours, 150)
