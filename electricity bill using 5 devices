@@ -1,0 +1,28 @@
+class ElectricityBill:
+    def __init__(self):
+        self.total_units = 0
+
+    def add_device(self, units):
+        self.total_units += units
+
+    def calculate_bill(self):
+        if self.total_units <= 100:
+            amount = self.total_units * 10
+        elif self.total_units <= 600:
+            amount = self.total_units * 15
+        else:
+            amount = self.total_units * 20
+        return amount
+   def show_bill(self):
+        print("\n----- Electricity Bill -----")
+        print("Total Units Consumed:", self.total_units)
+        print("Total Amount:", self.calculate_bill())
+bill = ElectricityBill()
+
+n = int(input("Enter number of devices (1 to 5): "))
+
+for i in range(n):
+    units = int(input(f"Enter units consumed by device {i+1}: "))
+    bill.add_device(units)
+
+bill.show_bill()
