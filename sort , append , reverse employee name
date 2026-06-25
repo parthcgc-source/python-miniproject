@@ -1,0 +1,9 @@
+employees = ["parth","mankirat","piyush","ram"]
+employees.sort()
+print(employees)
+employees.append("aniket")
+print(employees)
+employees.remove("piyush")
+print(employees)
+employees.reverse()
+print(employees)
